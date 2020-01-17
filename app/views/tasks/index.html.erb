@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+<div class="row">
+<% @tasks.each do |task| %>
+    <%= render 'layouts/card', :task => task %>
+<% end %>
+</div>
+<br>
+
+<%= link_to 'New Task', new_task_path %>

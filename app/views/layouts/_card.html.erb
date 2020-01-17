@@ -1,0 +1,19 @@
+
+
+    <div class="card col-4" style="width: 18rem;">
+      <img src="<%= task.photo %>" class="card-img-top photo" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= task.title %></h5>
+        <p class="card-text"><%= task.desc %></p>
+        <a href="#" class="btn btn-primary"><%= link_to "Ver", task %></a>
+        <% if user_signed_in? %>
+          <% if task.users.include?(current_user) %>
+            <%= link_to "Cancelar", completar_path(task), class:'btn btn-warning' %>
+
+            <% else %>
+            <%= link_to "Completar", completar_path(task), class:'btn btn-primary' %>
+
+          <% end %>
+        <% end %>
+      </div>
+    </div>

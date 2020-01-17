@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @task.desc %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @task.photo %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
+
+<h2>usuario</h2>
+<% @task.users.each do |u| %>
+  <%= u.email %>
+<% end %>
+
+<h2>ranking</h2>
+<% @ranking.each do |u| %>
+  <%= u.email %>
+<% end %>
